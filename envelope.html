@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>An Envelope Just For You</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffe6f0; /* soft pink background */
+            font-family: 'Georgia', serif;
+            color: #704c5e; /* muted plum text */
+            margin: 0;
+            text-align: center;
+        }
+        .envelope {
+            background-color: #fff0f5; /* lavender blush */
+            border: 1px solid #f7cce5;
+            box-shadow: 0 4px 12px rgba(255, 105, 180, 0.2);
+            padding: 40px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 400px;
+        }
+        h2 {
+            font-size: 1.6rem;
+            color: #d63384; /* deep pink */
+        }
+        p {
+            color: #8c5c70;
+        }
+        input {
+            width: 80%;
+            padding: 12px;
+            margin: 20px 0;
+            border: 1px solid #f7cce5;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+            background-color: #fffafa;
+        }
+        input:focus {
+            border-color: #ff80bf; /* brighter pink when focused */
+            box-shadow: 0 0 6px rgba(255, 128, 191, 0.5);
+        }
+        button {
+            padding: 12px 28px;
+            border: none;
+            background-color: #ff80bf; /* bubblegum pink */
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            background-color: #ff4da6; /* darker hot pink on hover */
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+<div class="envelope">
+    <h2>A special message awaits...</h2>
+    <p>Please enter your name to open this envelope.</p>
+    <input type="text" id="winnie" placeholder="Your name">
+    <button onclick="checkName()">Open</button>
+</div>
+
+<script>
+    function checkName() {
+        const nameInput = document.getElementById("winnie").value.toLowerCase();
+        // --- CHANGE THIS TO YOUR PARTNER'S NAME (in lowercase) ---
+        const correctName = "winnie"; 
+
+        if (nameInput === correctName) {
+            window.location.href = 'flower.html';
+        } else {
+            alert("Hmm, that doesn't sound right. Maybe try a different spelling?");
+        }
+    }
+</script>
+
+</body>
+</html>
